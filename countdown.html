@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+</head>
+<body>
+
+<script>
+	
+// Set the date we're counting down to
+var countDownDate = new Date("Jan 30, 2018 15:37:25").getTime();
+
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+  // Get todays date and time
+  var now = new Date().getTime();
+
+  // Find the distance between now an the count down date
+  var distance = countDownDate - now;
+
+  // Time calculations for days, hours, minutes and seconds
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  // Display the result in the element with id="demo"
+
+ document.getElementById("dias").innerHTML = days ;
+  document.getElementById("horas").innerHTML = hours  ;
+   document.getElementById("minutos").innerHTML = minutes  ;
+    document.getElementById("segundos").innerHTML = seconds  ;
+
+ 
+  // If the count down is finished, write some text 
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+<div class="contador">
+</div>
+<div class="contenedor">
+	<div class="contenido" style="background-color:white;">
+		<p id="dias" class="numeros"></p>
+		<p class="letras">Days</p>
+	</div>
+	<div class="contenido" style="background-color:white;">
+		<p id="horas" class="numeros"></p>
+		<p class="letras">Hours</p>
+	</div>
+	<div class="contenido" style="background-color:white;">
+		<p id="minutos" class="numeros"></p>
+		<p class="letras">Minutes</p>
+	</div>
+	<div class="contenido" style="background-color:white;">
+		<p id="segundos" class="numeros"></p>
+		<p class="letras">Seconds</p>
+	</div>
+</div>
+
+<style>
+	div{
+		border-radius: 5px;
+
+	}
+	.contenedor{
+
+		width:100%;
+		height:100px;
+	}
+	.contenido{
+		height:80px;
+		width:6%;
+		float:left;
+
+		margin: 10px;
+		border-style: solid;
+		border-width: 2px;
+		border-color: gray;
+	}
+.numeros {
+  
+  font-size: 30px;
+  margin-top:10px;
+  font-family:Arial ;
+  text-align:center;
+  margin-bottom: -15px;
+}
+.letras
+{
+
+	 text-align:center;
+	color: gray;
+	font-family: Arial;
+}
+
+
+</style>
+</body>
+</html> 
